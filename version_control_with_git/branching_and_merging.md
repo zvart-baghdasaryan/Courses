@@ -12,11 +12,15 @@
 
 **Acyclic**
 - *Acyclic* mean "no cycles" or "non-circular"
+
+
 ![alt text](./images/graph1.png)
+
 
 **Directed Acyclic Graph (DAG)**
 - Contains nodes connected with arrow and has no cycles
 ![alt text](./images/graph2.png)
+
 
 ## Git's DAG
 - Git models the relationship of commits with DAG
@@ -27,10 +31,14 @@
 
 **Merge**
 - A *merge* occurs when a commit has more than one parent
+
 ![alt text](./images/graph3.png)
 
+
 ## Viewing Graphs in Git Client
+
 ![alt text](./images/graph4.png)
+
 
 - Git uses a directed acyclic graph (DAG) to represent commit history
 - Commits point to their **parent** commit
@@ -120,7 +128,9 @@ $ cat master
 - A reference to the current commit
 - Usually points to the branch label of the current branch
 - One HEAD per repository
+
 ![alt text](./images/head.png)
+
 
 ## Viewing HEAD In the .git Directory
 A reference file named `.git/HEAD`
@@ -153,11 +163,15 @@ $ git show HEAD^^
 ```
 
 **Combining ~ and ^**
+
 ![alt text](./images/head2.png)
+
 
 ## Tags
 Reference/label attached to a specific commit
+
 ![alt text](./images/tag.png)
+
 
 **Types of Tags**
 Lightweight 
@@ -168,7 +182,9 @@ Annotated
 - Optionally can be signed and verified with GNU Privacy Guard (GPG)
 
 ## Viewing And Using Tags
+
 - `git tag` - View all tags in the repository
+
 ```
 $ git tag
 v0.1
