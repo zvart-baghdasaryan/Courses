@@ -72,7 +72,7 @@ $ git config --global core.editor nano
 
 # Git Location
 
-![alt text](images\image.png)
+![alt text](./images/image.png)
 
 - **working tree** - a single commit's directories and files
 - **staging area/index** - files that are planned for the next commit
@@ -108,7 +108,7 @@ myproj$ git status
 ```
 ## git add
 `git add <file-or-directory>`
-![alt text](images\image-1.png)
+![alt text](./images/image-1.png)
 
 Add all untracked or modified files using 
 `git add .`
@@ -135,7 +135,7 @@ Adds staged content to the local repository as a commit
 - Previously commited files are also included
 - Created a snapshot of the entire project
 
-![alt text](images\image-1.png)
+![alt text](./images/image-1.png)
 
 ```
 $ git commit -m "initial commit"
@@ -179,7 +179,7 @@ On-premise options:
 - By convention, remote repository names end with ".git"
 
 ### Create a Remote Repository
-![alt text](images\image-3.png)
+![alt text](./images/image-3.png)
 
 - Create repository
 - Name the repository - The Git hosting provider will append ".git" to the remote URL
@@ -197,7 +197,7 @@ Have a local Repository?
 ## What is git clone?
 `git clone` is used to create a local copy of a remote repository
 
-![alt text](images\image-4.png)
+![alt text](./images/image-4.png)
 
 ```
 git clone <url/to/projectname.git> [localprojectname]
@@ -227,7 +227,7 @@ git remote add origin https://...
 
 ## Push a commit to a Remote Repository
 `git push` writes commits for a branch to a remote repository
-![alt text](images\image-5.png)
+![alt text](./images/image-5.png)
 
 `git push [-u] [<repository>] [<branch>]`
 - `<repository>` can be a name (shortcut) or URL
