@@ -19,7 +19,9 @@
 
 **Directed Acyclic Graph (DAG)**
 - Contains nodes connected with arrow and has no cycles
+
 ![alt text](./images/graph2.png)
+
 
 
 ## Git's DAG
