@@ -1,7 +1,5 @@
 # Installation and Getting Started
 
-- Explore Git help
-- Configure your user name, email adress and default editor
 
 ## Basic Git Syntax
 `git [command] [--flags] [arguments]`
@@ -71,6 +69,7 @@ $ git config --global core.editor nano
 ```
 
 
+
 # Git Location
 
 ![alt text](images\image.png)
@@ -79,6 +78,8 @@ $ git config --global core.editor nano
 - **staging area/index** - files that are planned for the next commit
 - **local repository** - contains the commits of the project
 - **remote repository** - contains the commits of the project
+
+
 
 # Create a Local Repository
 
@@ -95,6 +96,8 @@ myproj$ ls -a
 .  ..  .git
 ```
 
+
+# Commit to a Local Repository
 
 ## git status
 
@@ -146,11 +149,96 @@ $ git log
 Limiting the size of git log
 
 - -- oneline condensed version of the log
-- # limits the log to the most recent # commits
+- #- limits the log to the most recent # commits
 
 ```
 $ git log --oneline
 $ git log --oneline -2
 ```
+
+
+# Create a Remote Repository
+
+## Remote Repository
+- Professionally managed
+- Source of truth
+- Integrates with other systems
+
+### Remote Git Repository Options
+Hosted options:
+- Bitbucket
+- GitHub
+
+On-premise options:
+- Bitbucket Server
+- GitHub Enterprise
+- open sourse software
+
+### Remote Repository
+- A remote repository is often a "bare" repository
+- By convention, remote repository names end with ".git"
+
+### Create a Remote Repository
+![alt text](images\image-3.png)
+
+- Create repository
+- Name the repository - The Git hosting provider will append ".git" to the remote URL
+
+#### REVIEW
+- A remote repository is a bare repository
+- Often saves as the project's source of truth
+- Hosting providers make creating remore repositories easy
+
+# Push to a Remote Repository
+Have a local Repository?
+- no - clone the remote
+- yes - add the remote
+
+## What is git clone?
+`git clone` is used to create a local copy of a remote repository
+
+![alt text](images\image-4.png)
+
+```
+git clone <url/to/projectname.git> [localprojectname]
+```
+
+## Remote Repository Information
+- Displays information about remote repositories associated with the local repository
+
+```
+git remote --verbose
+
+Or
+
+git remote -v
+```
+
+## Add a Remote Repository
+```
+git remote add <name> <url>
+
+Ex:
+git remote add origin https://...
+```
+## REMINDER - Branches
+- All commots belong to a branch
+- By default, there is a single branch and it is called master
+
+## Push a commit to a Remote Repository
+`git push` writes commits for a branch to a remote repository
+![alt text](images\image-5.png)
+
+`git push [-u] [<repository>] [<branch>]`
+- `<repository>` can be a name (shortcut) or URL
+- `-u` track this branch (--set-upstream)
+
+```
+repoa$ git remote -v
+repoa$ git push -u origin master
+```
+
+
+
 
 
