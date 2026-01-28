@@ -237,6 +237,124 @@ After pushing tags, log into Bitbucket and view them on the remote repository
 - Tags are not automatically pushed to remote repositories
 
 
+# Branches
+
+## What is a Branch
+
+![alt text](./images/branch1.png)
+
+The set of commits that trace back to the project's first commit.
+
+## Benefits of Branches
+- Fast and easy to create
+- Enable experimentation
+- Enable team development
+- Support multiple project versions
+
+## Topic And Long-Running Branches
+**Topic**
+- A feature, a bug fix, a hotfix, a configuration change, etc.
+**Long-lived**
+- master, develop, release, etc.
+
+## Viewing Branches
+Use `git branch` to see a list of branches
+
+```
+$ git branch
+feature X
+* master
+```
+
+## Creating a Branch Using `git branch <name>`
+
+```
+# create a branch
+$ git branch featureX
+$ git branch
+* master
+feature X
+```
+
+## CheckOut
+- Updated the HEAD reference
+- Updated the working tree with the commit's files
+
+![alt text](./images/checkout.png)
+
+Use `git checkout <branch_or_commit>` to checkout a branch or commit
+
+```
+# switch to a branch
+$ git checkout featureX
+$ git branch
+master
+* featureX
+$ ls
+(files for featureX)
+```
+
+**Creating and Checking Out a Branch (Single Command)**
+The -b option combines two commands (git branch and git checkout)
+
+```
+$ git checkout -b featureX
+```
+**Detached HEAD**
+
+![alt text](./images/head3.png)
+
+**Fixing a Detached HEAD**
+
+
+![alt text](./images/head4.png)
+
+## Deleting a Branch Label
+
+`git branch -d <branch>`
+
+```
+$ git branch -d featureX
+Deleted branch featureX (was 010226b)
+$ git branch
+* master
+```
+
+**Dangling Commits**
+```
+$ git branch -d featureX
+error: The branch 'featureX' is not fully merged.
+If you are sure want to delete it, run  'git branch -D featureX'.
+$ git branch -D fetaureX
+Deleted branch featureX (was 434dfa0)
+```
+
+## Undoing an Accidental Branch Delete wuth `git reflog`
+`git reflog` returns a *local* lits of recent HEAD commits
+
+```
+$ git branch -D featureX
+Deleted branch featureX (was 434dfa0)
+
+$ git reflog
+942c36f (HEAD -> master) HEAD@ {0}: ....
+434dfa0 HEAD$ {1}: commit:...
+
+$ git checkout -b featureX 434dfa0
+....
+```
+
+### REVIEW
+- A branch is a set of commits that trace back to the project's first commit
+- Creating a branch created a branch label
+- Checkout involves updating HEAD and updating the working tree
+- A detached HEAD reference points directly to a commit
+- Fix a detached HEAD by creting a branch
+- Deleting a branch deletes a branch label
+- Dangling commits will eventually be garbage collected
+
+
+
 
 
 
