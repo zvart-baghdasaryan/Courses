@@ -354,6 +354,106 @@ $ git checkout -b featureX 434dfa0
 - Dangling commits will eventually be garbage collected
 
 
+# Merging
+
+
+![alt text](./images/merge.png)
+
+Main types of merges:
+1. Fast-forward merge
+2. Merge commit
+3. Squash merge
+4. Rebase
+
+**Fast-Dorward (FF) Merge**
+Moves the base branch label to the tip of the topic branch
+
+![alt text](./images/merge2.png)
+
+Possible if no other commits have been made to the base branch since branching:
+
+![alt text](./images/merge3.png)
+
+**Performing a Fast-Forward Merge**
+1. git checkout master
+2. git merge featureX
+- attemting a fast forward merge is the default
+3. git branch -d featureX
+
+![alt text](./images/merge4.png)
+
+```
+$ git log --oneline --graph --all
+* 5046c75 (HEAD -> feature2) added feature 2
+* fbadd75 (master) added feature 1
+$ git checkout master
+$ git merge feature2
+Updating fbadd75..5046c75
+Fast-forward
+...
+$ git log --oneline --graph --all
+* 5046c75 (HEAD -> master, feature2) added feature 2
+* fbadd75 added feature 1
+$ git branch -f feature2
+Deleted branch feature2 ...
+$ git log --oneline --graph --all
+* 5046c75 (HEAD -> master) added feature 2
+* fbadd75 added feature 1
+```
+
+- The resulting commit history is linear
+
+
+**Merge Commit**
+1. Combines the commits at the tips of the merged branches
+2. Places the result in the merge commit
+
+![alt text](./images/merge5.png)
+
+Performing a Merge Commit (No Fast-Forward)
+1. git checkout master
+2. git merge --no-ff featureX
+- accept or modify the merge message
+3. git branch -d featureX
+
+![alt text](./images/merge6.png)
+
+```
+$ git log --oneline --graph --all
+* 5046c75 (HEAD -> feature2) added feature 2
+* fbadd75 (master) added feature 1
+$ git checkout master
+$ git merge --no-ff feature
+# opens editor to edit merge message
+$ git log --oneline --graph --all
+*  efaa6ff (HEAD -> master) merge branch 'feature2'
+|\ 
+| * 804772b ...
+|/
+* 9232a1d ...
+$ git branch -d feature2
+```
+
+**Team Commit History Policies**
+- Require a linear history
+- Require merge commits
+- Let the person merging decide
+
+**Merging Long-Running Branches**
+These merges are typically easy because they are fast-forwardable
+
+![alt text](./images/merge7.png)
+
+###REVIEW
+- Merging combines the work of multiple branches
+- A fast-forward merge moves the base branch label to the tip of the topic branch
+- A merge is fast-forwardable if no other commits have been made to the base branch since branching
+- A merge commit is the result of combining the work of multiple commits
+- A merge commit has multiple parents
+
+
+
+
 
 
 
