@@ -1,12 +1,18 @@
-﻿// Hello World
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq.Expressions;
 using System.Reflection.Emit;
 using System.Runtime.Intrinsics.X86;
+using System.Text;
+//Class
+using coreObjectOrientedConcepts;
+using coreObjectInheritance;
+using System.Runtime.InteropServices.Java;
 
+// Hello World
 Console.WriteLine("Hello, World!");
 
 // Data Types
@@ -96,3 +102,117 @@ foreach (string n in names)
 {
     Console.WriteLine(n);
 }
+
+
+//Loops
+string[] namess = new string[5] {"King Kocchhar", "Sarah Bowling", "John Smith", "Roger Lee", "James Lee"};
+
+//for
+for(int j = 0; j < namess.Length; j++)
+   Console.WriteLine(namess[j]);
+
+//while
+int z = 0;
+while(z < namess.Length)
+{
+    Console.WriteLine(namess[z]);
+    z++;
+}
+
+//Jump Statements
+//break
+for(int j = 0; j <= 10; j++)
+{
+    if(j==5) break;
+    Console.WriteLine("Hello World" + j);
+}
+
+//continue
+for(int j = 0; j <= 10; j++)
+{
+    if(j==5) continue;
+    Console.WriteLine("Hello World" + j);
+}
+
+//goto
+switch(userType)
+{
+    case "admin":
+        Console.WriteLine("You have full access.");
+        goto case "user";
+    case "subadmin":
+        Console.WriteLine("You can create or delete courses");
+        break;
+    case "user":
+        Console.WriteLine("You can access the courses.");
+        break;
+    default:
+        Console.WriteLine("Trial User");
+        break;
+}
+
+//Arrays
+int[] marks = new int[5] {25, 50, 55, 60, 40};
+/*
+marks[0] = 25;
+marks[1] = 50;
+marks[2] = 55;
+marks[3] = 60;
+marks[4] = 40;
+*/
+foreach (int mark in marks)
+    Console.WriteLine(mark);
+
+int[,] multiArray=new int[3, 4]{{1,2,3,4}, {1,2,3,4}, {1,2,3,4}};
+/*
+multiArray[0,0] = 23;
+...
+*/
+for(int j = 0; j < 3; j++)
+{
+    for(int jj = 0; jj < 4; jj++)
+    {
+        Console.WriteLine(multiArray[j,jj] + "\t");
+    }
+    Console.WriteLine();
+}
+
+int[][] jaggedArray = new int[2][];
+jaggedArray[0] = new int[2];
+jaggedArray[1] = new int[3];
+
+
+//Strings
+string str1 = "Hello World";
+string str2 = "C# Programming";
+Console.WriteLine(str1);
+Console.WriteLine(str1.Length);
+string str3 = string.Concat(str1, str2);
+Console.WriteLine(str3);
+Console.WriteLine(str1.Equals(str2));
+
+//Immutable String
+/*
+string s1 = "C# Programming";
+string s2 = "Java Programming";
+*/
+
+//Mutable String
+/*
+StringBuilder stringBuilder = new StringBuilder();
+stringBuilder.Append("C# Programming");
+stringBuilder.Append("Java Programming");
+*/
+
+//Classes and Objects
+Student student = new Student();
+student.acceptDetails();
+student.displayDetails();
+
+Student student1 = new Student(102, "Karthik");
+student1.displayDetails();
+
+//Inheritance
+Marks obj = new Marks();
+obj.accept();
+obj.display();
