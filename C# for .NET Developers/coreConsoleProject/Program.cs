@@ -10,7 +10,14 @@ using System.Text;
 //Class
 using coreObjectOrientedConcepts;
 using coreObjectInheritance;
-using System.Runtime.InteropServices.Java;
+using bankRelated;
+using bankAccount;
+using calculate;
+using intExt;
+using partialClass;
+using userClass;
+using System.Runtime.InteropServices.Marshalling;
+using System.Runtime.CompilerServices;
 
 // Hello World
 Console.WriteLine("Hello, World!");
@@ -216,3 +223,43 @@ student1.displayDetails();
 Marks obj = new Marks();
 obj.accept();
 obj.display();
+
+
+//Abstract Classes
+SavingAccount savingAccount = new SavingAccount();
+savingAccount.deposit();
+savingAccount.withdraw();
+savingAccount.balance();
+savingAccount.getMessage();
+
+//Interfaces
+SavingAcc savingAcc = new SavingAcc();
+savingAcc.deposit();
+savingAcc.withdraw();
+savingAcc.balance();
+savingAcc.openAccount();
+savingAcc.closeAccount();
+
+//Static Class
+Console.WriteLine(Calculate.increment());
+Console.WriteLine(Calculate.increment());
+Console.WriteLine(Calculate.increment());
+
+Console.WriteLine(Calculate.decrement());
+
+//Extension Method
+int number = 100;
+bool res = number.IsGreaterThan(1000);
+Console.WriteLine(res);
+
+//Partial Class
+var emp = new Employee();
+Console.WriteLine(emp.EmpId);
+Console.WriteLine(emp.EmpName);
+emp.EmployeeDetails();
+
+//Property
+User user = new User();
+user.Name = "King Kochar";
+Console.WriteLine(user.Name);
+Console.WriteLine(user.CompanyName);
