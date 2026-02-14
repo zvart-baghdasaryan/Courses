@@ -214,7 +214,181 @@ Pull with a Fast-Forward merge
 
 ![alt text](./images/pull1.png)
 
+```
+$ git status
+$ git pull
+$ git log --oneline
+```
+
 Pull with a merge commit
 
 ![alt text](./images/pull2.png)
+
+`git pull` with conflicting uncommitted changes
+```
+$ echo "feature4" >> fileA.txt
+$ git pull
+...
+Aborted
+```
+
+`git pull` with safe uncommited changes
+```
+$ touch fileB.txt #new file
+$ git pull
+$ ls
+```
+
+`git pull` with a merge
+```
+$ touch fileC.txt # new file
+$ git add fileC.txt
+$ git commit -m "added fileC.txt"
+$ git pull
+$ git log --oneline --graph -4
+```
+
+**Push**
+Pushing local commit to remote
+`git push [-u] [<repository>] [<branch>]`
+- `-u` Track this branch (`--set-upstream`)
+```
+$ git push -u origin master
+```
+
+**Fetch or Pull before Push**
+Fetching or pulling before you push is suggested
+```
+(create a commit on the remote repository)
+$ touch fileB.txt
+$ git add fileB.txt
+$ git push
+```
+
+**REVIEW**
+- Clone, fetch, pull and push commands communicate with a remote repository
+- Fetch updates tracking branch information
+- Pull combines a fetch and merge
+- Push adds commits to the remote repository
+
+**Hands On**
+- Fetch the latest commits from the remote repository
+- Execute a pull with a fast-forward merge
+- Execute a pull with a merge commit
+- Push commits to the remote repository
+
+
+# Rebasing
+Rewriting commit history
+- The topics discussed here rewrite the commit history
+- This should be done with caution
+- General rule: Do not rewrite history that has been shared with others
+
+Two Types of Rebase
+- Rebase
+- Intecative rebase
+
+**Rebase**
+Moves commit to a new parent (base)
+- The unique commits on the featureX branch (B and C) are reapplied to the tip of the master branch
+- Because the ancestor chain is different, each of the reapplied commits has a different commit ID
+
+![alt text](./images/rebase1.png)
+
+**Diffs**
+- Each commit contains a snapshot of the complete project
+- Git can calculate the difference between commits
+    - This is known as a *diff* or a *patch*
+
+**Rebasing reapplies commits**
+When rebasing, Git applies the diffs to the new parent commit
+- This is called "reapplying commits"
+
+![alt text](./images/rebase2.png)
+
+**Rebasing is a Merge**
+- Reapplying commits is a form of a merge and is susceptible to merge conflicts
+- For example, commits B and C can change the same file, causing a merge conflict during the rebase
+
+**Rebasing PROS and CONS**
+- Pros:
+    - You can incorporate changes from the parent branch
+        - You can use the new features/bugfixes
+        - Tests are on more current code
+        - It makes the eventual merge into master fast-forwardable
+    - Avoids "unnecessary" commits
+        - It allows you to shape/define celan commit histories
+- Cons:
+    - Merge conflicts may need to be resolved
+    - It can cause problems if your commits have been shared
+    - You are not preserving the commit history
+
+**Executing Rebase**
+`git rebase` SYNTAX
+
+`git rebase <upstream>`
+- Changes the parent of the currently checked out branch to `<upsteram>`
+
+`git rebase <upstream> <branch>`
+- Check out `<branch>` and changes its parent `<upstream>`
+- This is a convenience to avoid issuing two commands
+
+```
+$ git checkout featureX
+$ git rebase master
+
+# equivalent to:
+$ git rebase master featureX
+```
+Upstream usually refers the parent branch of the rebased branch
+
+**Rebasing with merge conflicts**
+
+Fixing a merge conflicts while rebasing
+1. **git checkout featureX**
+2. **git rebase master**
+    a. CONFLICT
+3. **git status**
+    a. Both modified fileA.txt
+4. Fix fileA.txt
+5. **git add fileA.txt**
+6. **git rebase --continue**
+
+Files with conflicts are modified by Git in the working tree
+- Run `git status` to see which files have been modified
+
+
+**Rebase with a Merge Conflict (1 of 4)**
+Since rebase involves a merge, there is the possibility of a merge conflict
+```
+$ git log --all --graph --oneline
+$ git rebase master
+$ git status
+$ cat fileA.txt
+(edit fileA.txt)
+$ cat fileA.txt
+$ git add fileA.txt
+$ git rebase --continue
+$ git status
+$ git log --all --graph --oneline
+```
+
+**Aborting a Rebase**
+Use `git rebase --abort` to get back to the pre-rebase state
+```
+$ git chekot feature
+$ git rebase master
+$ git rebase --abort
+$ git status
+```
+
+**Resolving Merge Conflicts - Comparing Merge to Rebase**
+
+![alt text](./images/rebase3.png)
+
+**REVIEW**
+- Rebasing moves a branch to the tip of another branch
+- Rebasing is a form of merge and may result in merge conflicts
+
+
 
