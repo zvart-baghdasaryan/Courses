@@ -114,3 +114,107 @@ $ git log origin --oneline
 215b50a (origin/master, origin/HEAD) add feature 1
 f92ad48 (HEAD -> master) add fileA.txt
 ```
+
+**Changing remotes/origin/HEAD**
+Change the default remote tracking branch with
+`git remote set-head <remote> <branch>`
+
+```
+$ git branch --all
+* develop
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/develop
+  remotes/origin/master
+$ git remote set-head origin develop
+$ git branch --all
+* develop
+  master
+  remotes/origin/HEAD -> origin/develop
+  remotes/origin/develop
+  remotes/origin/master
+```
+
+**Viewing Tracking Branch Status**
+`git status` includes tracking branch status
+```
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'
+...
+```
+
+`git status` will inform you if the cached tracking branch information is out of synch with your local branch
+```
+$ git commit -m "added feature 2"
+$ git status
+Your branch is ahead of 'origin/master' by 1 commit.
+...
+```
+
+**Viewing Commits of All loacl and Trach=king branches**
+Use `git log --all` to see a combined log  of all local and tracking branches
+```
+(edit fileA.txt)
+$  git add fileA.txt
+$ git commit -m "added feature 2"
+$ git log --all --oneline --graph
+```
+
+**REVIEW**
+- Local branches that represent remote branches
+- Named `<remote/branch>`, for example `origin/master`
+- Can become out of synch with local branches
+- Updated with network command like **clone, fetch, pull** and **push**
+
+# Fetch, Pull, and Push
+
+**Nework Commands**
+**Clone** - Copies a remote repository
+**Fetch** - Retrieves new object and references from the remote repository
+**Pull** - Fetches and merges commits locally
+**Push** - Adds new objects and references to the remote repository
+
+**Fetch**
+`git fetch <repository>`
+- Retrieves new objects and references from another repository
+- Tracking branches are updated
+```
+$ git log origin/master --oneline --graph --all
+$ git fetch
+$ git log origin/master --oneline --graph --all
+```
+
+![alt text](./images/fetch.png)
+
+After `git fetch`
+`git status` will inform you that current branch is behind the tracking branch
+
+```
+$ git fetch
+$ git status
+```
+
+**Pull**
+`git pull [<repository>] [<branch>]`
+Combines `git fetch` and `git merge FETCH_HEAD`
+- If objects are fetched, the tracking branch is merged into the current local branch
+- This is similar to a topic branch merging into a base branch
+```
+$ git pull
+```
+
+`git pull` merging options
+`--ff` (default) - fast-forward if possible, otherwise perform a merge commit
+`--no-ff` - always include a merge commit
+`--ff-only` - cancel instead of doing a merge commit
+`--rebase [--preserve-merges]` 
+
+Pull with a Fast-Forward merge
+
+![alt text](./images/pull1.png)
+
+Pull with a merge commit
+
+![alt text](./images/pull2.png)
+
