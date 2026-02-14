@@ -271,12 +271,6 @@ $ git push
 - Pull combines a fetch and merge
 - Push adds commits to the remote repository
 
-**Hands On**
-- Fetch the latest commits from the remote repository
-- Execute a pull with a fast-forward merge
-- Execute a pull with a merge commit
-- Push commits to the remote repository
-
 
 # Rebasing
 Rewriting commit history
@@ -391,4 +385,135 @@ $ git status
 - Rebasing is a form of merge and may result in merge conflicts
 
 
+# Rewriting History
 
+**AMENDING a commit**
+- You can change the most recent commit
+    - change the commit message
+    - change the project files
+- This creates a new SHA-1 (rewrites history)
+
+```
+$ touch fileC.txt
+$ git add fileC.txt
+$ git commit -m "ad fileC.txt"
+$ git log --oneline -1
+$ git commit --amend -m "add fileC.txt"
+$ git log --oneline -1
+```
+
+**Amending a Commit - Changing Commited Files**
+- You can modify the staging area and amend a commit
+- Optionally use the `--no-edit` option to reuse the previous commit message
+
+```
+$ git log --oneline -1
+$ echo "some text" > fileC.txt
+$ git add fileC.txt
+$ git commit --amend --no-edit
+$ git log --oneline -1
+```
+
+**Interactive Rebase**
+- Interactive rebase lets you edit commits using commands
+    - The commit can belong to any branch
+    - The commit history is changed - do not use for shared commits
+- `git rebase -i <after_this_commit>`
+    - Commits in the current branch after `<after-this-commit>` are listed in an editor and can be modified
+
+![alt text](./images/rebasei1.png)
+
+
+**Interactive Rebase Options**
+- Use the commit as is
+- Edit the commit message
+- Stop and edit the commit
+- Drop/delete the commit
+- Squash
+- Fixup
+- Reorder commits
+- Execute shell commands
+
+**Edit A Commit**
+
+Example:
+
+![alt text](./images/example1.png)
+
+```
+$ git log --oneline --graph
+$ git rebasae -i 0e91
+$ ls
+$ mv fileBB.txt fileB.txt
+$ git status
+$ git add .
+$ git commit --amend -m "add fileB.txt"
+$ git rebase --continue
+$ ls
+```
+
+**Delete a Commit**
+The commit's work is not used
+
+```
+$ git log --oneline --graph
+$ ls
+$ git rebase -i e091
+(command pick)
+$ git log --oneline --graph
+$ ls
+```
+
+**Squash a Commit**
+1. Applies a newer (squashed) commit to an older commit
+2. Combines the commit messages
+3. Removed the newer commit
+
+```
+$ git log --oneline --graph
+$ ls
+$ git rebase -i b7fa
+(command squash)
+$ git log --oneline --graph
+$ ls
+```
+
+Note: A fixup is like a squash, but the squashed commit's message is descarded
+
+**Squash VS. Delete**
+**Squash** - Combine this commit with the older commit, creating a single commit
+    - The work of both commits is included
+**Delete** - No changes from this commit are applied
+    - The diff is thrown out
+    - The work of this commit is lost
+    - Greater chance of a merge conflict
+
+![alt text](./images/example2.png)
+
+**Squash Merge**
+1. Merges the tip of the feature branch (D) onto the tip of the base branch (C)
+    - There is chance of a merge conflict
+2. Places the result in the staging area
+3. The result can then be commited (E)
+
+![alt text](./images/squash.png)
+
+Performing a Squash merge
+1. git checkout master
+2. git merge --squash featureX
+3. git commit
+    a. accept or modify the squash message
+4. git branch -D featureX
+
+Squash Merge with Fast-Forward
+1. git checkout master
+2. git merge --squash featureX
+3. git commit
+    a. accept or modify the squash message
+4. git branch -D featureX
+
+**REVIEW**
+- You can amend the most recent commit's message and/or committed files
+    - It created a new SHA-1
+- Interactive rebase allows you to rewrite the history of a branch
+- A squash reduces multiple commits into a single commit
