@@ -245,9 +245,22 @@ partial void method_name
 - A get accessor returns a property value, and a set accessor assigns a new value.
 - The value keyword represents the value of a property.
 - The general form of a declaring a property is as follows:
+
 ```
 {
     get{ }
     set{ }
 }
 ```
+
+**Usage of Properties**
+- C# Properties can be read-only or write-only.
+- We can have logic while setting value in the C# Properties.
+- We make fields of a class private, so that fields can't be accessed from outside the class directly.
+
+Types of Properties:
+- Read-Write: Accessors: get; set;
+- Read-Only: Accessors: get;
+- Write-Only: Accessors: set;
+- Auto-Implemented: Accessors: get; set;
+
