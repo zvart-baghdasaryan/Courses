@@ -17,6 +17,7 @@ using intExt;
 using partialClass;
 using userClass;
 using stringIndexer;
+using enamDemo;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.CompilerServices;
 
@@ -274,3 +275,8 @@ stringIndexerType[3] = "String Four";
 
 for(int f=0; f<10; f++)
     Console.WriteLine(stringIndexerType[f]);
+
+
+//Enum
+EnumDemo enumDemo = new EnumDemo();
+enumDemo.displayWeekDays();

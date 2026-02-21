@@ -281,4 +281,33 @@ element-type this[int index] {
 }
 ```
 
+## Indexer vs. Properties
+**Indexer**
+- Indexers are created with this keyword.
+- Indexers are identified by signature.
+- Indexers are accessed using indexes.
+- Indexer are instance member, so can't be static.
+- A get accessor has the same formal parameter list as the indexer.
+- A set accessor has the same formal parameter list as the  indexer, in addition to the value parameter.
+
+**Properties**
+- Properties don't require this keyword.
+- Properties are identified by their names.
+- Properties are accessed by their names.
+- Properties can be static as well as instance members.
+- A get accessor of a property has no parameters.
+- A get accessor of a property contains implicit value parameter.
+
+# Enum in C#
+- An enum is a user-defined data type that has a fixed set of related values.
+- We use enum keyword to create an enum.
+```
+enum Months
+{
+    May,
+    June,
+    July
+}
+```
+
 
