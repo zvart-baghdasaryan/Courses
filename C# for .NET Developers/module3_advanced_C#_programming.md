@@ -264,3 +264,21 @@ Types of Properties:
 - Write-Only: Accessors: set;
 - Auto-Implemented: Accessors: get; set;
 
+# Indexer
+- An indexer allows an object to be indexed such as an array.
+- When you define an indexer for a class, this class behaves similar to virtual array.
+- You can then access the instance of this class using the array access operatory([]).
+- A one dimensional indexer has the following syntax:
+```
+element-type this[int index] {
+    //The get accessor.
+    get {
+        //return the value specified by index
+    }
+    set {
+        // set the value specifid by index
+    }
+}
+```
+
+

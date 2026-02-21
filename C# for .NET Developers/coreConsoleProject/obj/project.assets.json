@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zvart\\OneDrive - Synopsys, Inc\\Desktop\\Projects\\courses\\Courses\\C# for .NET Developers\\coreConsoleProject\\coreConsoleProject.csproj",
+      "projectUniqueName": "C:\\Users\\zvart\\Projects_personal\\Courses\\C# for .NET Developers\\coreConsoleProject\\coreConsoleProject.csproj",
       "projectName": "coreConsoleProject",
-      "projectPath": "C:\\Users\\zvart\\OneDrive - Synopsys, Inc\\Desktop\\Projects\\courses\\Courses\\C# for .NET Developers\\coreConsoleProject\\coreConsoleProject.csproj",
+      "projectPath": "C:\\Users\\zvart\\Projects_personal\\Courses\\C# for .NET Developers\\coreConsoleProject\\coreConsoleProject.csproj",
       "packagesPath": "C:\\Users\\zvart\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zvart\\OneDrive - Synopsys, Inc\\Desktop\\Projects\\courses\\Courses\\C# for .NET Developers\\coreConsoleProject\\obj\\",
+      "outputPath": "C:\\Users\\zvart\\Projects_personal\\Courses\\C# for .NET Developers\\coreConsoleProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\zvart\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
