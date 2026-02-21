@@ -16,6 +16,7 @@ using calculate;
 using intExt;
 using partialClass;
 using userClass;
+using stringIndexer;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.CompilerServices;
 
@@ -263,3 +264,13 @@ User user = new User();
 user.Name = "King Kochar";
 Console.WriteLine(user.Name);
 Console.WriteLine(user.CompanyName);
+
+//Indexer
+StringIndexerType stringIndexerType = new StringIndexerType();
+stringIndexerType[0] = "String One";
+stringIndexerType[1] = "String Two";
+stringIndexerType[2] = "String Three";
+stringIndexerType[3] = "String Four";
+
+for(int f=0; f<10; f++)
+    Console.WriteLine(stringIndexerType[f]);

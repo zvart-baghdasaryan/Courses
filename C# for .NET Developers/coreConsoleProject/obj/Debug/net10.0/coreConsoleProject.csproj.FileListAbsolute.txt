@@ -13,3 +13,18 @@ C:\Users\zvart\OneDrive - Synopsys, Inc\Desktop\Projects\courses\Courses\C# for 
 C:\Users\zvart\OneDrive - Synopsys, Inc\Desktop\Projects\courses\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.pdb
 C:\Users\zvart\OneDrive - Synopsys, Inc\Desktop\Projects\courses\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.genruntimeconfig.cache
 C:\Users\zvart\OneDrive - Synopsys, Inc\Desktop\Projects\courses\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\ref\coreConsoleProject.dll
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\bin\Debug\net10.0\coreConsoleProject.exe
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\bin\Debug\net10.0\coreConsoleProject.deps.json
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\bin\Debug\net10.0\coreConsoleProject.runtimeconfig.json
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\bin\Debug\net10.0\coreConsoleProject.dll
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\bin\Debug\net10.0\coreConsoleProject.pdb
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.AssemblyInfoInputs.cache
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.AssemblyInfo.cs
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.csproj.CoreCompileInputs.cache
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.sourcelink.json
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.dll
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\refint\coreConsoleProject.dll
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.pdb
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\coreConsoleProject.genruntimeconfig.cache
+C:\Users\zvart\Projects_personal\Courses\C# for .NET Developers\coreConsoleProject\obj\Debug\net10.0\ref\coreConsoleProject.dll
