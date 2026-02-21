@@ -310,4 +310,55 @@ enum Months
 }
 ```
 
+# Exception Handling
+- An execption is an unexpected event that occurs during program execution.
+- They abnormally terminate flow of program instructions, we need to handle those exceptions.
+- The actions to be performed in case of occurrence of an exception is not known to program.
+- In such a case, we create an exception object and call the exception handler code.
+- Responding or handling exception is called Exception Handling.
+
+**Exception Handler Keywords**
+**try**     - Used to define a try block. This block holds the code that may throw an exception.
+**catch**   - Used to define a catch block. This block catches exception thrown by the try block.
+**finally** - Used to define the finally block. This block holds the default code.
+**throw**   - Used to throw an exception manually.
+
+**Try-Catch Block**
+- The *try..catch** click is used to handle exceptions in C#.
+- Syntax:
+```
+try
+{
+    //code that may raise an exception
+}
+catch (Exception e)
+{
+    //code that handles the exception
+}
+```
+- Here, we place the code that might generate an exception inside the try block.
+- The try block then throws the exception to the catch block which handles the raised exception.
+
+**Try-Catch-Finally Block**
+- You can use finally block with try and catch block.
+- The finally block is always executed whether there is an exception or not.
+- Sytax:
+```
+try
+{
+    // code that may raise an exception
+}
+catch (Exception e)
+{
+    // code that handle the exception
+}
+finally
+{
+    // this code is always executed
+}
+```
+
+The finally block is executed:
+- after try and catch block - when exception has occurred
+- after try block - when exception doesn't occur
 
