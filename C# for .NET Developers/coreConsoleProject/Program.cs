@@ -19,6 +19,7 @@ using userClass;
 using stringIndexer;
 using enamDemo;
 using calculation;
+using delegateExample;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.CompilerServices;
 
@@ -311,3 +312,21 @@ foreach(var project in objAn.projects)
 {
     Console.WriteLine(project.projectName + ":" + project.projectDuration);
 };
+
+
+//Delegate
+CalculateDelegate c1 = new CalculateDelegate(DelegateExample.addition);
+CalculateDelegate c2 = new CalculateDelegate(DelegateExample.multiplication);
+
+c1(100);
+Console.WriteLine(DelegateExample.getNumber());
+
+c2(200);
+Console.WriteLine(DelegateExample.getNumber());
+
+c1(100);
+Console.WriteLine(DelegateExample.getNumber());
+c1 += new CalculateDelegate(DelegateExample.addition);
+c1 += new CalculateDelegate(DelegateExample.multiplication);
+c1(100);
+Console.WriteLine(DelegateExample.getNumber());

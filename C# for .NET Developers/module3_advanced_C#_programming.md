@@ -380,3 +380,18 @@ var anonyInfo = new
 };
 Console.WriteLine("Fname : " + anonyInfo.Lname;)
 ```
+
+# Delegates
+- A deligate is a pointer to a method.
+- But it is object-oriented, secured and type-safe than function pointer.
+- That means, a deligate holds the address of a method which can be called using that deligate.
+- For static method, deligate encapsulates method only.
+- But for instance method, it encapsulates method and instance both.
+- There are three steps involved while working with deligates:
+    - Declare a delegate
+    - Set a target method
+    - Invoke a delegate
+
+**Types of Delegates**
+- **SingleCast delegates** - A single function or method is referred as a Delegate.
+- **MultiCast Delegates** - Refers to the delegation of multiple functions or methods.
