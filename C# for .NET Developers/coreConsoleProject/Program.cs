@@ -348,5 +348,16 @@ static void EventMessage()
 
 
 //Anonymous Methods
-
 AnonymousMethodExample.InvoleMethod();
+
+//Lambda Expression
+
+//Expression Lambda:
+var numbers = new int[] {2, 4, 6, 8, 5, 1, 3, 5, 7};
+var count = numbers.Count(x=> x == 5);
+Console.WriteLine(count);
+
+//Statement Lambda
+List<int> numbers2 = new List<int>{2, 4, 6, 8, 5, 1, 3, 5, 7};
+count = numbers.Count(x=> {return x == 5;});
+Console.WriteLine(count);

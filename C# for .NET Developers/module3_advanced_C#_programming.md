@@ -427,3 +427,32 @@ static void Main(string[] args)
     print(500);
 }
 ```
+
+# Lambda Expression
+- C# Lambda Expression is a short block of code that accepts parameters and returns a value.
+- It is defined as an anonymous function (function without a name).
+- Lambda expressions in C# are used like anonymous functions,
+- with the differece that in Lambda expressions you don't need to specify the type of the value that you input thus making it more flexible to use.
+- The '=>' is the labmda operator which is used in all lambda expressions.
+- The Lambda expression is devided into two parts,
+    - the left side is the input and the right is the expression.
+
+**Define a Lambda Expression**
+- We can define lambda expression in C# as,
+```
+(parameterList) => lambda body
+```
+
+Here,
+- **parameterList** - List of input parameters
+- **=>** - A Lambda Operator
+- **Lambda body** - Can be an expression or statement
+
+**Types of Lambda Expression**
+The Lambda Exprssions can be of two types:
+- **Expression Lambda:** Consists of the input and the expression.
+- Syntax:
+```
+input => expression;
+```
+- **Statement Lambda:** Consists of the input and a set of statements to be executed.
