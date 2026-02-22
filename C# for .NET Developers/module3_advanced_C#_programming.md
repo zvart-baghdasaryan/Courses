@@ -362,3 +362,21 @@ The finally block is executed:
 - after try and catch block - when exception has occurred
 - after try block - when exception doesn't occur
 
+
+# Anonymous Type
+- It is introduced in C# 3.0.
+- Anonymous types allow us to create an object that has read only properties.
+- Anonymous object is an object that has no explicit type.
+- C# compiler generates type name and is accessible only for the current block of code.
+- These are best for the "use and throw" types.
+- To create anonymous types, we must use new operator with an object initializer.
+
+- In the below example, we are creating anonymous types by using "new" keyword with the object initializer.
+```
+var anonyInfo = new
+{
+    Fname = "abc",
+    Lname = "xyz"
+};
+Console.WriteLine("Fname : " + anonyInfo.Lname;)
+```

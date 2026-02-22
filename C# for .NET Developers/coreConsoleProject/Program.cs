@@ -285,3 +285,29 @@ enumDemo.displayWeekDays();
 //Handling Exceptions
 Calculation calculation = new Calculation();
 calculation.calculate();
+
+
+//Anonymous Type
+var objAn = new
+{
+    firstName = "King",
+    lastName = "Kochhar",
+    salary = 12000,
+    address = new {streetName = "Civil Lines", city = "Delhi"},
+    projects = new[]
+    {
+        new {projectName = "ECommerce", projectDuration = "40 Hours"},
+        new {projectName = "Admin Portal", projectDuration = "25 Hours"},
+        new {projectName = "Accounting", projectDuration = "30 Hours"}
+    }
+};
+
+Console.WriteLine(objAn.firstName);
+Console.WriteLine(objAn.lastName);
+Console.WriteLine(objAn.salary);
+Console.WriteLine(objAn.address);
+Console.WriteLine(objAn.address.streetName);
+foreach(var project in objAn.projects)
+{
+    Console.WriteLine(project.projectName + ":" + project.projectDuration);
+};
