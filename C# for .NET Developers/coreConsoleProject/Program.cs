@@ -20,6 +20,7 @@ using stringIndexer;
 using enamDemo;
 using calculation;
 using delegateExample;
+using eventsExample;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.CompilerServices;
 
@@ -330,3 +331,16 @@ c1 += new CalculateDelegate(DelegateExample.addition);
 c1 += new CalculateDelegate(DelegateExample.multiplication);
 c1(100);
 Console.WriteLine(DelegateExample.getNumber());
+
+
+//Events
+//The Subscriber Model
+EventsExample events = new EventsExample();
+events.event_OddNumber += new EventsExample.delegate_OddNumber(EventMessage);
+events.addition();
+Console.ReadLine();
+
+static void EventMessage()
+{
+    Console.WriteLine("Event Executed : Odd Number");
+}

@@ -395,3 +395,15 @@ Console.WriteLine("Fname : " + anonyInfo.Lname;)
 **Types of Delegates**
 - **SingleCast delegates** - A single function or method is referred as a Delegate.
 - **MultiCast Delegates** - Refers to the delegation of multiple functions or methods.
+
+
+# Events
+- Events in C#, being a subset of delegates are defined by using... delegates.
+- An ecents is an excapsulates delegate.
+- To raise an event in C# you need a bublisher,
+- and to receive and handle an event you need a subscriber or multiple subscribers.
+- There are usually implemented as publisher and subscriber classes.
+- Syntax:
+```
+event delegate_name event_name;
+```
