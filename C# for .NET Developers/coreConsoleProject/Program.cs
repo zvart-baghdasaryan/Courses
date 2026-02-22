@@ -18,6 +18,7 @@ using partialClass;
 using userClass;
 using stringIndexer;
 using enamDemo;
+using calculation;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.CompilerServices;
 
@@ -280,3 +281,7 @@ for(int f=0; f<10; f++)
 //Enum
 EnumDemo enumDemo = new EnumDemo();
 enumDemo.displayWeekDays();
+
+//Handling Exceptions
+Calculation calculation = new Calculation();
+calculation.calculate();
