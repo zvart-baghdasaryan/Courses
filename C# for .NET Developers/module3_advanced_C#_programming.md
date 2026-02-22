@@ -456,3 +456,27 @@ The Lambda Exprssions can be of two types:
 input => expression;
 ```
 - **Statement Lambda:** Consists of the input and a set of statements to be executed.
+
+
+# Expression Tree
+- Expression tree is nothing but expression arranged in a tree-like data structure.
+- Each node in a expression tree is an expression.
+- Expression tree is an in-memory representation of a lambda expression.
+- It holds the actual elements of the query, not the result of the query.
+- The expression tree makes the structure of the lambda expression transparent and explicit.
+- You can interact with the data in expression tree just as you can with any other data structure.
+- Syntax:
+```
+Expression<TDelegate> name = lambdaExpression;
+```
+
+Expression trees can be created by using followingg two ways:
+- Using Expression Lambda
+- Using Expression Tree API
+
+**Expression Tree Structure**
+The simple structure of an **Expression<TGelegate>** has four properties as given below:
+- **Body:** The body of the expression.
+- **Parameters:** The parameters of the lambda expression.
+- **NodeType:** The type of node in the tree
+- **Type:** The type of the expression

@@ -361,3 +361,15 @@ Console.WriteLine(count);
 List<int> numbers2 = new List<int>{2, 4, 6, 8, 5, 1, 3, 5, 7};
 count = numbers.Count(x=> {return x == 5;});
 Console.WriteLine(count);
+
+
+//Expression Tree:
+Func<string, string, string> stringJoins = (str1, str2) => string.Concat(str1, str2);
+Expression<Func<string, string, string>> stringJoinsExpr = (str1, str2) => string.Concat(str1, str2);
+
+var func = stringJoinsExpr.Compile();
+var rslt = func("Hello", "Worlds");
+Console.WriteLine(rslt);
+//or
+rslt = stringJoinsExpr.Compile()("Hello", "Everyone");
+Console.WriteLine(rslt);
