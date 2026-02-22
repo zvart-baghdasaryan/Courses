@@ -21,6 +21,7 @@ using enamDemo;
 using calculation;
 using delegateExample;
 using eventsExample;
+using anonycmousMethod;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.CompilerServices;
 
@@ -344,3 +345,8 @@ static void EventMessage()
 {
     Console.WriteLine("Event Executed : Odd Number");
 }
+
+
+//Anonymous Methods
+
+AnonymousMethodExample.InvoleMethod();

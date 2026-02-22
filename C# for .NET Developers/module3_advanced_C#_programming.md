@@ -407,3 +407,23 @@ Console.WriteLine("Fname : " + anonyInfo.Lname;)
 ```
 event delegate_name event_name;
 ```
+
+# Anonymous Method
+- As the name suggests, an anonymous method is a method without a nema.
+- Anonymous methods can be defined using the delegate keyword.
+- They can be assigned to a variable of delegate type.
+- Anonymous methods can access variable defined in an outher function.
+- Example:
+```
+public delegate void Print(int variable);
+
+static void Main(string[] args)
+{
+    Print print = delegate(int val)
+    {
+        Console.WriteLine("Inside Anonymous method. Value: {0}");
+    };
+
+    print(500);
+}
+```
